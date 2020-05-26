@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+</head>
+<style>
+    body{
+        background-color: lightcyan;
+    }
+    div{
+        width: 60%;
+        margin: 0 auto;
+        line-height: 30px;
+    }
+    h1{
+        color: #0389f4;
+        letter-spacing: 1px;
+    }
+    textarea{
+        font-size: 20px;
+        font-weight: 600;
+        font-stretch: expanded;
+        letter-spacing: 1px;
+    }
+    button[type='submit']{
+        display: block; margin: 0 auto;
+        padding: 20px;
+        font-size: 15px;
+        border: 3px solid maroon;
+        border-radius: 10px;
+        outline: none;
+        color: blueviolet;
+    }
+    button[type='submit']:hover{
+            background-color: rgb(236, 99, 35);
+            transition: 0.3s;
+            color: #fff;
+       }
+</style>
+<body> 
+<div>
+        <h1>Welcome To Text Analyzer. Enter your text below.</h1>
+        <form action="/analyze" method="POST">
+            {% csrf_token %}
+            <textarea name='comment' style='margin: 0px; width: 721px; height: 100px;'></textarea>
+            <br>
+            <input type='checkbox' name='removepunc'>Remove Punctuations
+            <br>
+            <input type='checkbox' name='fullcaps'>UpperCase
+            <br>
+            <input type='checkbox' name='lineremover'>New Line Remover
+            <br>
+            <input type='checkbox' name='spaceremover'>Extra Spaces Remover
+            <br>
+            <button type='submit'>Analyze text</button>
+        </form>
+</div> 
+</body>
+</html>
